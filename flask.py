@@ -1,4 +1,4 @@
-from flask import Flask
+from flask import Flask, render_template
 
 my_app = Flask(__name__)
 
@@ -6,14 +6,10 @@ my_app = Flask(__name__)
 def root():
     return "This is the root page. Other pages include one and two."
 
-@my_app.route('/one')
-def one():
-    return "This is page one. Other pages include root and two."
-
-@my_app.route('/two')
-def two():
-    return "This is page two. Other pages include root and one."
+@my_app.route('/occupations')
+def occupations():
+    return render_template('template.html', c = "hello")
 
 if __name__ == '__main__':
-    #my_app.debug = true
-my_app.run()
+    my_app.debug = true
+    my_app.run()

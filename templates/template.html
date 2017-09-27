@@ -1,11 +1,20 @@
 <! DOCTYPE HTML>
 <html>
   <head>
-    <title>  </title>
+    <title>{{ title }}</title>
   </head>
   <body>
-    {% block c %}
+    {{ i}}
+
+    <table>
+      {% for i in d %}
+      <tr>
+        <td> {{ i }} </td> 
+        <td> {{ d[i] }} </td>
+      </tr>
+      {% endfor %}
+    </table>
     
-    {% endblock %}
+    {{ random_occ }}
   </body>
 </html>
